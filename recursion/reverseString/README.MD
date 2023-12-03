@@ -21,3 +21,20 @@ function reverseString(s) {
   // What is the smallest amount of work i can do each iteration?
 }
 ```
+
+---
+
+## Second Approach
+
+when we want to find the base cases i typically think if i were just to pass a very a small input, what is the smallest input that i could just pass in to start. In this condition is an empty string. So if i pass the empty string, it would make sense that it will return back.
+
+```javascript
+function reverseString(s) {
+  if (s === "") {
+    return s;
+  }
+  // What is the smallest amount of work i can do each iteration?
+}
+```
+
+---
