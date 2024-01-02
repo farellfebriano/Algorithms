@@ -30,4 +30,12 @@ Cons
 
 # How To Approach a Recursion Problem
 
-1.
+1. Identify if you can break down problem into smaller problem
+2. Write the recurence relation if needed
+3. Draw the recursive tree
+4. About the Tree
+   - see the flow of function, see how they are getting in stack
+   - identify and focus on left tree cals and right tree cals
+   - draw the tree and position again and again using pen and paper
+   - use a debugger to see the flow
+5. see how the values are returned at each step
