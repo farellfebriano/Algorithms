@@ -27,3 +27,7 @@ Cons
 - Slowness due CPU overhead
 - Can lead to out of memory errors / stack overflow exceptions
 - can be unnecessarily complex if proofly constructed
+
+# How To Approach a Recursion Problem
+
+1.

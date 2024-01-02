@@ -34,22 +34,38 @@ class BinarySearchTree {
       }
     }
   }
-  breadthFirstSearch() {
-    let currentNode = this.root;
-    let list = [];
-    let queue = [];
-    queue.push(currentNode);
-    while (queue.length > 0) {
-      // this will delete the first node from the list
-      currentNode = queue.shift();
-      list.push(currentNode.value);
-      if (currentNode.left) {
-        queue.push(currentNode.left);
-      }
-      if (currentNode.right) {
-        queue.push(currentNode.right);
-      }
+  traverseInOrder(node, list) {
+    if (node.left) {
+      console.log("this.traverseInOrder(node.left, list)");
+      this.traverseInOrder(node.left, list);
     }
+    console.log("list.push(node.value)");
+    list.push(node.value);
+    if (node.right) {
+      console.log("this.traverseInOrder(node.right, list);");
+      this.traverseInOrder(node.right, list);
+    }
+    console.log("return list;");
+    return list;
+  }
+  traversePreOrder(node, list) {
+    list.push(node.value);
+    if (node.left) {
+      this.traversePreOrder(node.left, list);
+    }
+    if (node.right) {
+      this.traversePreOrder(node.right, list);
+    }
+    return list;
+  }
+  traversePostOrder(node, list) {
+    if (node.left) {
+      this.traversePostOrder(node.left, list);
+    }
+    if (node.right) {
+      this.traversePostOrder(node.right, list);
+    }
+    list.push(node.value);
     return list;
   }
 }
@@ -58,13 +74,15 @@ const myBinarySearch = new BinarySearchTree();
 myBinarySearch.insert(9);
 myBinarySearch.insert(20);
 myBinarySearch.insert(4);
-myBinarySearch.insert(1);
-myBinarySearch.insert(-1);
-myBinarySearch.insert(15);
-myBinarySearch.insert(6);
-myBinarySearch.insert(170);
-myBinarySearch.insert(180);
-myBinarySearch.insert(2000);
+// myBinarySearch.insert(1);
+// myBinarySearch.insert(-1);
+// myBinarySearch.insert(15);
+// myBinarySearch.insert(6);
+// myBinarySearch.insert(170);
+// myBinarySearch.insert(180);
+// myBinarySearch.insert(2000);
 
 // console.log(traverse(myBinarySearch.root));
-console.log(myBinarySearch.breadthFirstSearch());
+console.log(myBinarySearch.traverseInOrder(myBinarySearch.root, []));
+console.log(myBinarySearch.traversePreOrder(myBinarySearch.root, []));
+console.log(myBinarySearch.traversePostOrder(myBinarySearch.root, []));
